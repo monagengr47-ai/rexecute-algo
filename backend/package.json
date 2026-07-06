@@ -1,0 +1,32 @@
+{
+  "name": "rexecute-algo-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Rexecute Algo EA monitoring and control",
+  "main": "dist/server.js",
+  "scripts": {
+    "start": "node dist/server.js",
+    "dev": "ts-node src/server.ts",
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "keywords": ["trading", "ea", "metatrader", "forex"],
+  "author": "Rexecute Algo",
+  "license": "Proprietary",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ws": "^8.13.0",
+    "axios": "^1.4.0",
+    "sqlite3": "^5.1.6",
+    "body-parser": "^1.20.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.0.0",
+    "@types/ws": "^8.5.4",
+    "typescript": "^5.0.2",
+    "ts-node": "^10.9.1"
+  }
+}
