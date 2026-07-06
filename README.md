@@ -2,9 +2,9 @@
 
 **Rexecute Algo** is a subscription-free, professional-grade Expert Advisor (EA) for MetaTrader 4 and MetaTrader 5, supporting multiple brokers and asset classes.
 
-## Features
+## 🎯 Features
 
-### 🎯 Multi-Broker Support
+### Multi-Broker Support
 - **Exness** - Full support with competitive spreads
 - **XM (XMTrading)** - Complete integration
 - **Deriv** - Crypto and synthetic indices support
@@ -38,17 +38,80 @@
 - **Multi-Timeframe Analysis** - Applied timeframe flexibility
 - **Entry/Exit Optimization** - Dynamic SL/TP calculation
 
-## Installation
+## 📁 Project Structure
+
+```
+rexecute-algo/
+├── ea/                          # MetaTrader Expert Advisor
+│   ├── RexecuteAlgo.mq5         # Main MQL5 source code
+│   ├── RexecuteAlgo.mq4         # MT4 version
+│   └── include/                 # MQL5 include files
+├── dashboard/                   # Web Dashboard (React + TypeScript)
+│   ├── src/
+│   │   ├── components/          # React components
+│   │   ├── pages/               # Dashboard pages
+│   │   ├── hooks/               # Custom React hooks
+│   │   ├── services/            # API/WebSocket services
+│   │   ├── types/               # TypeScript interfaces
+│   │   └── App.tsx              # Main app component
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── vite.config.ts
+├── backend/                     # Node.js/Express backend
+│   ├── src/
+│   │   ├── server.ts            # Express server
+│   │   ├── routes/              # API routes
+│   │   ├── services/            # Business logic
+│   │   └── types/               # TypeScript definitions
+│   ├── package.json
+│   └── tsconfig.json
+├── docs/                        # Documentation
+│   ├── INSTALLATION_GUIDE.md
+│   ├── CONFIGURATION_PRESETS.md
+│   ├── API_DOCUMENTATION.md
+│   └── TROUBLESHOOTING.md
+├── .gitignore
+├── LICENSE
+└── package.json                 # Root workspace config
+```
+
+## 🚀 Quick Start
+
+### 1. Clone Repository
+```bash
+git clone https://github.com/monagengr47-ai/rexecute-algo.git
+cd rexecute-algo
+```
+
+### 2. Install EA (MetaTrader)
+- Copy `ea/RexecuteAlgo.mq5` to your MT5 Experts folder
+- Reload EA in MetaTrader
+- Attach to chart and configure
+
+### 3. Set Up Dashboard
+```bash
+# Install dependencies
+npm install
+
+# Run backend
+cd backend && npm start
+
+# Run dashboard (in another terminal)
+cd dashboard && npm run dev
+```
+
+## 📋 Installation Steps
 
 ### Prerequisites
 - MetaTrader 4 or MetaTrader 5
 - Windows OS (for MT4/MT5)
+- Node.js 16+ (for dashboard)
 - Demo or Live Account with supported broker
 
 ### Quick Setup
 
 1. **Download the EA**
-   - Copy `RexecuteAlgo.mq5` from this repository
+   - Copy `ea/RexecuteAlgo.mq5` from this repository
 
 2. **Paste into MT folder**
    ```
@@ -69,7 +132,7 @@
    - Set `EnableEA = true`
    - Monitor dashboard
 
-## Parameter Groups
+## 🎮 Parameter Groups
 
 ### Main Settings
 | Parameter | Default | Description |
@@ -96,59 +159,17 @@
 | BreakEvenStop | true | Move SL to breakeven |
 | BreakEvenProfitPoints | 30 | Profit needed for BE |
 
-### Market Conditions
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| UseVolatilityFilter | true | Filter high volatility |
-| UseTrendFilter | true | Trade with trend only |
-| ATRPeriod | 14 | Volatility period |
-| TrendPeriod | 50 | MA period for trend |
+## 📊 Dashboard Features
 
-### Time Settings
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| StartHour | 8 | Trading start (server time) |
-| EndHour | 22 | Trading end (server time) |
-| TradeMonday-Sunday | Varied | Day trading filters |
+- **Real-time Trade Monitor** - Live position tracking
+- **Account Overview** - Balance, equity, drawdown
+- **Performance Metrics** - Win rate, profit factor, Sharpe ratio
+- **Risk Analytics** - Drawdown analysis, risk/reward ratios
+- **Trade History** - All closed trades with analysis
+- **Parameter Control** - Adjust EA settings in real-time
+- **Alerts & Notifications** - Trade execution alerts
 
-## Usage Guide
-
-### Starting a Session
-1. Open MT4/MT5 terminal
-2. Attach EA to desired symbol
-3. Confirm "Allow live trading"
-4. Monitor dashboard for trade activity
-
-### Dashboard Display
-The on-chart dashboard shows:
-- Current status (ON/OFF)
-- Manual close mode (ON/OFF)
-- Number of open positions
-- Account balance
-- Current drawdown %
-- Trading symbol
-
-### Manual Position Management
-- **Manual Close ON**: Positions must be closed manually
-- **Manual Close OFF**: EA auto-closes at take profit/stop loss
-- Right-click position → Close to exit manually
-
-### Emergency Stop
-- Set `EnableEA = false` immediately
-- New trades halt; existing positions remain open
-- Close positions manually if needed
-
-## Performance Metrics
-
-| Metric | Value |
-|--------|-------|
-| Win Rate | 55-65% (varies by market) |
-| Risk/Reward | 1:1.5 to 1:3 |
-| Max Drawdown | 15-25% (configurable) |
-| Monthly Return | 3-8% (conservative) |
-| Sharpe Ratio | 1.2-1.8 |
-
-## Broker Compatibility
+## 🔗 Broker Compatibility
 
 | Broker | MT4 | MT5 | Account Type | Minimum |
 |--------|-----|-----|-------------|----------|
@@ -157,7 +178,7 @@ The on-chart dashboard shows:
 | Deriv | ✅ | ✅ | Synthetic/Crypto | $100 |
 | Generic MT | ✅ | ✅ | Any | $100 |
 
-## Supported Assets
+## 📈 Supported Assets
 
 ### Forex Pairs
 - **Majors**: EURUSD, GBPUSD, USDJPY, USDCHF
@@ -168,13 +189,38 @@ The on-chart dashboard shows:
 - US30, DE30, UK100, JP225, FR40
 
 ### Metals
-- XAUUSD (Gold), XAGUSD (Silver)
-- Platinum, Palladium
+- XAUUSD (Gold), XAGUSD (Silver), Platinum, Palladium
 
 ### Cryptocurrencies
 - BTCUSD, ETHUSD, BNBUSD, ADAUSD, DOGEUSD
 
-## Troubleshooting
+## 📚 Documentation
+
+- [Installation Guide](docs/INSTALLATION_GUIDE.md)
+- [Configuration Presets](docs/CONFIGURATION_PRESETS.md)
+- [API Documentation](docs/API_DOCUMENTATION.md)
+- [Troubleshooting](docs/TROUBLESHOOTING.md)
+
+## ⚠️ Safety Recommendations
+
+1. **Always test on demo account first** (2 weeks minimum)
+2. **Start with small amounts** on live account
+3. **Monitor EA daily** for first month
+4. **Never risk entire account** (max 5% per trade)
+5. **Keep EA updated** with latest version
+6. **Backup settings** regularly
+
+## 📊 Performance Metrics
+
+| Metric | Value |
+|--------|-------|
+| Win Rate | 55-65% (varies by market) |
+| Risk/Reward | 1:1.5 to 1:3 |
+| Max Drawdown | 15-25% (configurable) |
+| Monthly Return | 3-8% (conservative) |
+| Sharpe Ratio | 1.2-1.8 |
+
+## 🆘 Troubleshooting
 
 ### EA Not Trading
 - ✅ Verify `EnableEA = true`
@@ -189,42 +235,24 @@ The on-chart dashboard shows:
 - Check indicator data loading
 - Verify price action
 
-### High Slippage
-- Reduce `MaxOpenPositions`
-- Trade only major pairs
-- Trade during high liquidity hours
-- Use Exness for best spreads
+### Dashboard Not Connecting
+- Verify backend is running on port 3001
+- Check firewall settings
+- Ensure MT5 is streaming data
+- Review browser console for errors
 
-### Insufficient Funds
-- Lower `AccountRiskPercent` (try 1%)
-- Reduce `MaxOpenPositions`
-- Use demo account
-- Increase account balance
+## 📄 License
 
-## Safety Recommendations
+Proprietary - All rights reserved
 
-⚠️ **CRITICAL:**
-1. **Always test on demo account first** (2 weeks minimum)
-2. **Start with small amounts** on live account
-3. **Monitor EA daily** for first month
-4. **Never risk entire account** (max 5% per trade)
-5. **Keep EA updated** with latest version
-6. **Backup settings** regularly
-
-## Documentation Files
-
-- **CONFIGURATION_PRESETS.md** - Pre-tuned trading profiles
-- **INSTALLATION_GUIDE.md** - Detailed setup instructions
-- **README.md** - This file
-
-## Support
+## 🤝 Support
 
 - 📧 Report bugs with full details
 - 💬 Join trading communities
-- 📚 Review troubleshooting section
+- 📚 Review documentation
 - 🔄 Update to latest version
 
-## Disclaimer
+## ⚠️ Disclaimer
 
 This EA is provided **AS-IS** without warranty. Trading is risky; you may lose your entire investment. Past performance does not guarantee future results. Always trade responsibly and only with money you can afford to lose.
 
@@ -234,4 +262,4 @@ This EA is provided **AS-IS** without warranty. Trading is risky; you may lose y
 
 **Version**: 1.0
 **Last Updated**: July 6, 2026
-**License**: Proprietary
+**Status**: In Development
