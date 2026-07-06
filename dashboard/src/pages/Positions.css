@@ -1,0 +1,101 @@
+.positions-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.positions-page h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.positions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.position-card {
+  padding: 16px;
+}
+
+.position-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #334155;
+}
+
+.position-symbol {
+  font-size: 18px;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.position-type {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.position-type.buy {
+  background: #10b98108;
+  color: #10b981;
+}
+
+.position-type.sell {
+  background: #ef444408;
+  color: #ef4444;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.close-btn:hover {
+  background: #ef444408;
+}
+
+.position-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.detail-row .label {
+  color: #94a3b8;
+}
+
+.detail-row .value {
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+.detail-row.profit {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #334155;
+}
+
+.detail-row .positive {
+  color: #10b981;
+}
+
+.detail-row .negative {
+  color: #ef4444;
+}

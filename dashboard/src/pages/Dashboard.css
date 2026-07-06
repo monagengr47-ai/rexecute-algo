@@ -1,0 +1,99 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dashboard h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.equity-section {
+  margin-top: 24px;
+}
+
+.equity-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.positions-preview {
+  margin-top: 16px;
+}
+
+.positions-preview h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.positions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.position-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #0f172a;
+  border-radius: 6px;
+  border: 1px solid #334155;
+}
+
+.position-info {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.symbol {
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.type {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.type.buy {
+  background: #10b98108;
+  color: #10b981;
+}
+
+.type.sell {
+  background: #ef444408;
+  color: #ef4444;
+}
+
+.position-profit {
+  text-align: right;
+}
+
+.position-profit .positive {
+  color: #10b981;
+}
+
+.position-profit .negative {
+  color: #ef4444;
+}
+
+.empty {
+  color: #94a3b8;
+  text-align: center;
+  padding: 20px;
+}
